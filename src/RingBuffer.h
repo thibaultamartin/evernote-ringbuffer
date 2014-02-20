@@ -1,11 +1,3 @@
-//
-//  RingBuffer.h
-//  evernote-ringbuffer
-//
-//  Created by Thibault Martin on 19/02/2014.
-//
-//
-
 #ifndef __evernote_ringbuffer__RingBuffer__
 #define __evernote_ringbuffer__RingBuffer__
 
