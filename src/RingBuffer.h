@@ -40,9 +40,7 @@ public:
     }
     
     void pop() {
-        // Tail is already placed at first element inserted and not deleted
-        // TODO remove object ? dummy object ?
-        
+        // Nothing to do for deletion, just moving tail index
         // Positioning tail at "new" first element inserted and not deleted
         size_t next_tail = next(m_tail);
         m_tail = next_tail;
