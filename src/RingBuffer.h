@@ -72,8 +72,7 @@ public:
             m_back = prev(m_back);
         }
         
-        m_front = prev(m_front);
-        // TODO remove object !
+        m_front = prev(m_front);!
     }
     
     const T& operator[](size_t pos) {
