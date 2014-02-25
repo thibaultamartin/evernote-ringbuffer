@@ -40,6 +40,16 @@ public:
         delete [] m_buffer;
     }
     
+    size_t size() {
+        int size = m_front - m_back;
+        if(size == 0){
+            return m_full ? m_size : 0;
+        } else {
+            return (size < 0) ? -size : size;
+        }
+        
+    }
+    
     void push_front(const T &object) {
         // Head is already placed at an "empty" space, storing object in buffer
         m_buffer[m_front] = object;
@@ -63,6 +73,7 @@ public:
         }
         
         m_front = prev(m_front);
+        // TODO remove object !
     }
     
     const T& operator[](size_t pos) {
