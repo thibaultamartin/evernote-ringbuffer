@@ -45,7 +45,7 @@ public:
         if(size == 0){
             return m_full ? m_size : 0;
         } else {
-            return (size < 0) ? -size : size;
+            return (size < 0) ? m_size + size : size;
         }
         
     }
@@ -67,11 +67,10 @@ public:
     }
     
     void pop_front() {
-        if(m_full) {
-            m_full = false;
+        if(m_front == m_back && !m_full) {
             m_back = prev(m_back);
         }
-        
+        m_full = false;
         m_front = prev(m_front);
     }
     
