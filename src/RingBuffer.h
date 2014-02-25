@@ -72,7 +72,7 @@ public:
             m_back = prev(m_back);
         }
         
-        m_front = prev(m_front);!
+        m_front = prev(m_front);
     }
     
     const T& operator[](size_t pos) {
