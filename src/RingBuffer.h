@@ -74,6 +74,15 @@ public:
         m_front = prev(m_front);
     }
     
+    void pop_back() {
+        if(m_front == m_back && !m_full) {
+            m_front = next(m_front);
+        }
+        
+        m_full = false;
+        m_back = next(m_back);
+    }
+    
     const T& operator[](size_t pos) {
         size_t real_pos = pos_in_buffer(pos);
 
