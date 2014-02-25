@@ -16,7 +16,7 @@ void add_lines(int n_lines, RingBuffer<std::string>& rb) {
 
 void remove_lines(int n_lines, RingBuffer<std::string>& rb) {
     for(int i=n_lines; --i>=0;) {
-        rb.pop_front();
+        rb.pop_back();
     }
 }
 
