@@ -21,7 +21,6 @@ void remove_lines(int n_lines, RingBuffer<std::string>& rb) {
 }
 
 void print_lines(RingBuffer<std::string>& rb) {
-    std::cout << "Displaying " << rb.size() << " lines:" << std::endl;
     for(int i=0; i<rb.size(); i++) {
         std::cout << rb[i] << std::endl;
     }
