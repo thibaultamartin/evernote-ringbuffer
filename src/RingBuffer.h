@@ -1,8 +1,6 @@
 #ifndef __evernote_ringbuffer__RingBuffer__
 #define __evernote_ringbuffer__RingBuffer__
 
-#include <cstddef>
-#include <atomic>
 #include <stdexcept>
 
 template <typename T>
