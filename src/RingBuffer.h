@@ -13,32 +13,34 @@ private:
     size_t m_front;
     bool m_full;
     
-    size_t next(size_t current) {
+    const size_t next(size_t current) {
         return (current+1) % m_size;
     }
     
-    size_t prev(size_t current) {
+    const size_t prev(size_t current) {
         return (current-1) % m_size;
     }
     
-    size_t pos_in_buffer(size_t pos) {
+    const size_t pos_in_buffer(size_t pos) {
         return (m_back+pos) % m_size;
     }
     
 public:
     RingBuffer(size_t size) :
+    m_buffer(new T[size]),
     m_size(size),
     m_back(0),
     m_front(0),
     m_full(false) {
-        m_buffer = new T[size];
     }
+    
+    RingBuffer(const RingBuffer& other) = delete;
     
     virtual ~RingBuffer() {
         delete [] m_buffer;
     }
     
-    size_t size() {
+    const size_t size() {
         int size = m_front - m_back;
         if(size == 0){
             return m_full ? m_size : 0;
